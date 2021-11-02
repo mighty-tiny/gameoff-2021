@@ -5,3 +5,4 @@ This game falls under the Apache License 2.0, a permissive license whose main co
 Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 NOTE: NEVER MAKE CHANGES TO THE MAIN BRANCH.
+The Main branch is meant to be a working copy of the game.  Always branch.
