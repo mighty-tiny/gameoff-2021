@@ -12,7 +12,9 @@ namespace LadyBug.SaveSystem
 
         public string Id => id;
 
+
         [ContextMenu("Generate Id")]
+        //generates a uniqe id, used for saving
         private void GenerateId() => id = Guid.NewGuid().ToString();
 
         public object CaptureState()
@@ -27,6 +29,7 @@ namespace LadyBug.SaveSystem
             return state;
         }
 
+        //restores the save file (loads it)
         public void ResoreState(object state)
         {
             var stateDictionary = (Dictionary<string, object>)state;

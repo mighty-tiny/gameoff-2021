@@ -4,28 +4,36 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
+//https://youtu.be/f5GvfZfy3yk
 namespace LadyBug.SaveSystem
 {
     public class SaveLoadSystem : MonoBehaviour
     {
         //the file extension is very much important, do not change 
+        //where the savefile is stored
         private string SavePath => $"{Application.persistentDataPath}/saveData.CoolFileExtension";
 
+        //can be saved from the context menu. We will do this by code as soon as possible;
         [ContextMenu("Save")]
-        private void Save()
+        public void Save()
         {
             var state = LoadFile();
             CaptureState(state);
             SaveFile(state);
         }
 
+
+        //loads the save file;
         [ContextMenu("Load")]
-        private void Load()
+        public void Load()
         {
             var state = LoadFile();
             RestoreState(state);
         }
 
+
+        //loads the file
         private Dictionary<string, object> LoadFile()
         {
             if (!File.Exists(SavePath))
@@ -39,6 +47,7 @@ namespace LadyBug.SaveSystem
                 return (Dictionary<string, object>)formatter.Deserialize(stream);
             }
         }
+        //saves the file
 
         private void SaveFile(object state)
         {
@@ -49,6 +58,7 @@ namespace LadyBug.SaveSystem
             }
         }
 
+        //captures the current save state to an object which will be saved
         private void CaptureState(Dictionary<string, object> state)
         {
             foreach (var saveable in FindObjectsOfType<SaveableEntity>())
@@ -57,6 +67,8 @@ namespace LadyBug.SaveSystem
             }
         }
 
+
+        //loads the project from the saved object
         private void RestoreState(Dictionary<string, object> state)
         {
             foreach (var saveable in FindObjectsOfType<SaveableEntity>())
