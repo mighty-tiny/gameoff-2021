@@ -10,6 +10,13 @@ namespace LadyBug.SaveSystem
 {
     public class SaveLoadSystem : MonoBehaviour
     {
+
+        [ContextMenu("Locate Save File")]
+        private void LocateSaveFile()
+        {
+            Debug.Log(Application.persistentDataPath);
+        }
+
         //the file extension is very much important, do not change 
         //where the savefile is stored
         private string SavePath => $"{Application.persistentDataPath}/saveData.CoolFileExtension";
