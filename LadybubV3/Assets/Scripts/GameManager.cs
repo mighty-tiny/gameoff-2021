@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateHealthScore()
     {
-        healthText.text = $"Health: {{playerManager.heath}}";
+        //healthText.text = $"Health: {{playerManager.heath}}";
     }
 
     public void QuitGame()
