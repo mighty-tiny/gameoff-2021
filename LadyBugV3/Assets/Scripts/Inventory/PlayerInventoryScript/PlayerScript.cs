@@ -10,7 +10,6 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("COLLIDED");
         var item = other.GetComponent<Item>();
         if (item)
         {
