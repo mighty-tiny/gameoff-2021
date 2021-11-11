@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class DisplayInventory : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class DisplayInventory : MonoBehaviour
             if (itemsDisplayed.ContainsKey(inventory.Container[i]))
             {
                 itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-
+                itemsDisplayed[inventory.Container[i]].GetComponent<Image>().color = inventory.Container[i].item.rarity.RarityColor;
             }
             else
             {

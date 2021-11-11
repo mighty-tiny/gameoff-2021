@@ -6,4 +6,5 @@ using UnityEngine;
 public abstract class ItemObject : ScriptableObject
 {
     public GameObject prefab;
+    public Rarity rarity;
 }

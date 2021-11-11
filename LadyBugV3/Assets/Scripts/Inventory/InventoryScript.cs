@@ -26,11 +26,32 @@ public class InventoryScript : ScriptableObject
         }
     }
 
-
+    public void RemoveItem(ItemObject _item, int _amount)
+    {
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item == _item)
+            {
+                Container[i].AddAmount(-_amount);
+                if (Container[i].amount <= 0)
+                {
+                    for (int j = 0; j < Container.Count; j++)
+                    {
+                        if (Container[j].item == _item)
+                        {
+                            Container.Remove(Container[j]);
+                            break;
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
 }
 
 [System.Serializable]
-public class InventorySlot
+public struct InventorySlot
 {
     public ItemObject item;
     public int amount;
