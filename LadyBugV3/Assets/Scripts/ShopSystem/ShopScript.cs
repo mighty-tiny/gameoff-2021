@@ -9,7 +9,7 @@ public class ShopScript : ScriptableObject
     [HideInInspector] public List<ShopSlot> shopItems = new List<ShopSlot>();
     [SerializeField] InventoryScript inventory;
 
-   public void Init() //replace this with the load function when this is on the same branch as the save load system. Make sure to make the necesary changes
+   public void Init() //replace this with the load function when this is on the same branch as the save load system. Make sure to make the necesary changes (like only adding items with a stock of/above 1)
    {
         foreach (var item in staticShopItems)
         {
@@ -22,6 +22,8 @@ public class ShopScript : ScriptableObject
         if (item.stock <= 0) return;
 
         item.DecreaseStock(1);
+
+        if (item.stock <= 1) shopItems.Remove(item);
 
         inventory.AddItem(item.item.Reward, item.item.Quantity);
 
