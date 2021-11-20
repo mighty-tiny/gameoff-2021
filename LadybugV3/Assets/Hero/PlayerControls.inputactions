@@ -44,6 +44,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SprintStart",
+                    "type": "Button",
+                    "id": "7f778ea1-7bb9-4b1a-9858-909286684466",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "SprintEnd",
+                    "type": "Button",
+                    "id": "fabb8c46-d91e-4765-a223-23a5eaf47316",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -149,7 +165,7 @@
                 {
                     "name": "",
                     "id": "38ba2e3e-29f1-40cc-bd0f-e65a44717673",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,12 +186,12 @@
                 },
                 {
                     "name": "",
-                    "id": "bf4a7aab-1936-479b-aa3b-469aa9cb3e31",
-                    "path": "<Mouse>/delta",
+                    "id": "f8e99423-41ed-4ad7-a987-c3d10c30f053",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -255,6 +271,50 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "af5795b4-e749-446f-aa77-0a0feb843a20",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SprintStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1f905d9-13cb-4ea8-8e16-25c27b4c79eb",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SprintStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86d73925-3746-4323-b961-6bd5e9df36fc",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SprintEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57af4acd-8c2d-429b-8505-76d5a14db814",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SprintEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

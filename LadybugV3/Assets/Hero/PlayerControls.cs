@@ -57,6 +57,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SprintStart"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f778ea1-7bb9-4b1a-9858-909286684466"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""SprintEnd"",
+                    ""type"": ""Button"",
+                    ""id"": ""fabb8c46-d91e-4765-a223-23a5eaf47316"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -162,7 +178,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""38ba2e3e-29f1-40cc-bd0f-e65a44717673"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -183,12 +199,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bf4a7aab-1936-479b-aa3b-469aa9cb3e31"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""id"": ""f8e99423-41ed-4ad7-a987-c3d10c30f053"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -268,6 +284,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af5795b4-e749-446f-aa77-0a0feb843a20"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SprintStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1f905d9-13cb-4ea8-8e16-25c27b4c79eb"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SprintStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""86d73925-3746-4323-b961-6bd5e9df36fc"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SprintEnd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57af4acd-8c2d-429b-8505-76d5a14db814"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SprintEnd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -308,6 +368,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Land_Explosion = m_Land.FindAction("Explosion", throwIfNotFound: true);
         m_Land_Attack = m_Land.FindAction("Attack", throwIfNotFound: true);
         m_Land_Look = m_Land.FindAction("Look", throwIfNotFound: true);
+        m_Land_SprintStart = m_Land.FindAction("SprintStart", throwIfNotFound: true);
+        m_Land_SprintEnd = m_Land.FindAction("SprintEnd", throwIfNotFound: true);
         // Water
         m_Water = asset.FindActionMap("Water", throwIfNotFound: true);
         m_Water_Newaction = m_Water.FindAction("New action", throwIfNotFound: true);
@@ -365,6 +427,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Land_Explosion;
     private readonly InputAction m_Land_Attack;
     private readonly InputAction m_Land_Look;
+    private readonly InputAction m_Land_SprintStart;
+    private readonly InputAction m_Land_SprintEnd;
     public struct LandActions
     {
         private @PlayerControls m_Wrapper;
@@ -374,6 +438,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Explosion => m_Wrapper.m_Land_Explosion;
         public InputAction @Attack => m_Wrapper.m_Land_Attack;
         public InputAction @Look => m_Wrapper.m_Land_Look;
+        public InputAction @SprintStart => m_Wrapper.m_Land_SprintStart;
+        public InputAction @SprintEnd => m_Wrapper.m_Land_SprintEnd;
         public InputActionMap Get() { return m_Wrapper.m_Land; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +464,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_LandActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_LandActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_LandActionsCallbackInterface.OnLook;
+                @SprintStart.started -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintStart;
+                @SprintStart.performed -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintStart;
+                @SprintStart.canceled -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintStart;
+                @SprintEnd.started -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintEnd;
+                @SprintEnd.performed -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintEnd;
+                @SprintEnd.canceled -= m_Wrapper.m_LandActionsCallbackInterface.OnSprintEnd;
             }
             m_Wrapper.m_LandActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +489,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @SprintStart.started += instance.OnSprintStart;
+                @SprintStart.performed += instance.OnSprintStart;
+                @SprintStart.canceled += instance.OnSprintStart;
+                @SprintEnd.started += instance.OnSprintEnd;
+                @SprintEnd.performed += instance.OnSprintEnd;
+                @SprintEnd.canceled += instance.OnSprintEnd;
             }
         }
     }
@@ -461,6 +539,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnExplosion(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnSprintStart(InputAction.CallbackContext context);
+        void OnSprintEnd(InputAction.CallbackContext context);
     }
     public interface IWaterActions
     {
