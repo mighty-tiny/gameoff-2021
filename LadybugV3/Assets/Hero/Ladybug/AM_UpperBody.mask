@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AM_UpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Root
+    m_Weight: 0
+  - m_Path: Root/Torso
+    m_Weight: 1
+  - m_Path: Root/Torso/Body
+    m_Weight: 1
+  - m_Path: Root/Torso/Bone
+    m_Weight: 0
+  - m_Path: Root/Torso/Bone/Bone_end
+    m_Weight: 0
+  - m_Path: Root/Torso/Bone/Shell.L
+    m_Weight: 0
+  - m_Path: Root/Torso/Bone.001
+    m_Weight: 0
+  - m_Path: Root/Torso/Bone.001/Bone.001_end
+    m_Weight: 0
+  - m_Path: Root/Torso/Bone.001/Shell.R
+    m_Weight: 1
+  - m_Path: Root/Torso/Head
+    m_Weight: 1
+  - m_Path: Root/Torso/Head/Hair
+    m_Weight: 1
+  - m_Path: Root/Torso/Head/Head 1
+    m_Weight: 1
+  - m_Path: Root/Torso/Head/Head_end
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L/Hand.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L 1
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L/Hand.L/HandObject.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L/Hand.L/HandObject.L/HandObject.L_end
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/LowerArm.L/Lower Arm.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.L/Upper Arm.L
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R/Hand.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R 1
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R/Hand.R/HandObject.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R/Hand.R/HandObject.R/HandObject.R_end
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/LowerArm.R/Lower Arm.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperArm.R/Upper Arm.R
+    m_Weight: 1
+  - m_Path: Root/Torso/UpperLeg.L
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/LowerLeg.L
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/LowerLeg.L/Foot.L
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L 1
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/LowerLeg.L/Lower Leg.L
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.L/Upper Leg.L
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/LowerLeg.R
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/LowerLeg.R/Foot.R
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R 1
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/LowerLeg.R/Lower Leg.R
+    m_Weight: 0
+  - m_Path: Root/Torso/UpperLeg.R/Upper Leg.R
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.L
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.L/Bottom Wing.L
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.L/WIng Bottom.L_end
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.R
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.R/Bottom Wing.R
+    m_Weight: 0
+  - m_Path: Root/Torso/WIng Bottom.R/WIng Bottom.R_end
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.L
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.L/Top WIng.L
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.L/Wing Top.L_end
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.R
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.R/Top WIng.R
+    m_Weight: 0
+  - m_Path: Root/Torso/Wing Top.R/Wing Top.R_end
+    m_Weight: 0

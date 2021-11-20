@@ -1,0 +1,28 @@
+0 - 11 Base Pose
+12 - 48 Idle 1
+49 - 53 Base Pose
+54 - 78 Walk (Legs)
+79 - 83 Base Pose
+84 - 108 Walk (Arms)
+109 - 113 Base Pose
+114 - 126 Run (Legs)
+127 - 131 Base Pose
+132 - 144 Run (Arms)
+145 - 149 Base Pose
+150 - 159 Swing 1
+160 - 167 Base Pose
+168 - 177 Swing 2
+178 - 183 Base Pose
+184 - 194 Swing 3
+195 - 199 Base Pose
+200 - 227 Knocked Down, Back up
+228 - 235 Base Pose
+236 - 299 Death
+300 - 303 Base Pose
+306 - 312 Wings Opening
+315 - 321 Wings Open / Glide
+322 - 329 Base Pose
+330 - 342 Wings Flying
+343 - 344 Base Pose
+345 - 352 Jump
+353 Base Pose
